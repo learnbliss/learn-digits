@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/learn-digits/static/css/main.fa8816da.css",
+    "main.js": "/learn-digits/static/js/main.cab34d42.js",
+    "static/js/787.72f17906.chunk.js": "/learn-digits/static/js/787.72f17906.chunk.js",
+    "index.html": "/learn-digits/index.html",
+    "main.fa8816da.css.map": "/learn-digits/static/css/main.fa8816da.css.map",
+    "main.cab34d42.js.map": "/learn-digits/static/js/main.cab34d42.js.map",
+    "787.72f17906.chunk.js.map": "/learn-digits/static/js/787.72f17906.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa8816da.css",
+    "static/js/main.cab34d42.js"
+  ]
+}
