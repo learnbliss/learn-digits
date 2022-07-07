@@ -7,7 +7,7 @@ function App() {
     return (
         <>
             <div className={styles.container}>
-                {[...new Array(101)].map((_, i) => <Item block={block} setBlock={setBlock} digit={String(i)} color={i % 2 ? '#25A17E' : '#CB1D35'}>{i}</Item>)}
+                {[...new Array(101)].map((_, i) => <Item key={i} block={block} setBlock={setBlock} digit={String(i)} color={i % 2 ? '#25A17E' : '#CB1D35'}>{i}</Item>)}
             </div>
             <div>
                 <button>Settings</button>

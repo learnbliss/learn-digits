@@ -16,7 +16,8 @@ const Item: React.FC<ItemProps> = ({color, children, digit,block,  setBlock}) =>
             new SpeechSynthesisUtterance(),
         []
     )
-    voice.rate = 0.1;
+    voice.lang = 'ru-RU'
+    // voice.lang = 'en-US'
 
     const handleVoice = () => {
         if (block) {
