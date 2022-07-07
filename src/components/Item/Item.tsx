@@ -1,23 +1,24 @@
 import React, {useMemo} from 'react';
 import styles from './Item.module.css'
+import {IState} from "../../types";
 
 type ItemProps = {
-    color: string;
+    state: IState;
+    itemClassName: string;
     children: React.ReactNode;
     digit: string;
     block: boolean;
     setBlock: (bool: boolean) => void;
 }
 
-const Item: React.FC<ItemProps> = ({color, children, digit,block,  setBlock}) => {
+const Item: React.FC<ItemProps> = ({state, itemClassName, children, digit, block, setBlock}) => {
     const synth = speechSynthesis;
     const voice = useMemo(
         () =>
             new SpeechSynthesisUtterance(),
         []
     )
-    voice.lang = 'ru-RU'
-    // voice.lang = 'en-US'
+    voice.lang = state.lang
 
     const handleVoice = () => {
         if (block) {
@@ -30,7 +31,7 @@ const Item: React.FC<ItemProps> = ({color, children, digit,block,  setBlock}) =>
         voice.onend = () => setBlock(false)
     }
     return (
-        <div className={styles.root} style={{color: color}}>
+        <div className={`${styles.root} ${itemClassName}`}>
             <div className={styles.digit} onClick={handleVoice}>{children}</div>
         </div>
     );

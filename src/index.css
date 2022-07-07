@@ -3,6 +3,11 @@
   padding: 0;
   margin: 0;
 }
+:root {
+  --green: #25A17E;
+  --red: #CB1D35;
+  --purple: #6D489F;
+}
 
 html, body, #root {
   height: 100%;
