@@ -9,7 +9,12 @@ const defaultState = {
     lang: 'ru-RU',
     settingsOpen: false,
     isViewConfirm: false,
+    target: 'digits'
 }
+
+const russianAlphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".split('');
+
+const digits = [...new Array(101)].map((_, i) => i + 1);
 
 function App() {
     const [block, setBlock] = useState(false);
@@ -17,17 +22,21 @@ function App() {
     useEffect(() => {
         localStorage.setItem(saveSettings, JSON.stringify(state))
     }, [state]); //eslint-disable-line
+
+    const target = state.target === 'digits' ? digits : russianAlphabet
+    console.log('onyx target:', target)
+
     return (
         <>
             <div className={styles.container}>
-                {[...new Array(101)].map((_, i) =>
+                {target.map((item, i) =>
                     (<Item
                         state={state}
-                        key={i}
+                        key={item}
                         block={block}
                         setBlock={setBlock}
-                        digit={String(i)}
-                        itemClassName={i % 2 ? styles.green : styles.red}>{i}</Item>))}
+                        target={String(item)}
+                        itemClassName={i % 2 ? styles.green : styles.red}>{item}</Item>))}
             </div>
             <div className={styles.settingWrapper}>
                 <button onClick={() => setState({...state, isViewConfirm: true})}

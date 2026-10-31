@@ -6,12 +6,12 @@ type ItemProps = {
     state: IState;
     itemClassName: string;
     children: React.ReactNode;
-    digit: string;
+    target: string;
     block: boolean;
     setBlock: (bool: boolean) => void;
 }
 
-const Item: React.FC<ItemProps> = ({state, itemClassName, children, digit, block, setBlock}) => {
+const Item: React.FC<ItemProps> = ({state, itemClassName, children, target, block, setBlock}) => {
     const synth = speechSynthesis;
     const voice = useMemo(
         () =>
@@ -26,7 +26,7 @@ const Item: React.FC<ItemProps> = ({state, itemClassName, children, digit, block
         }
         voice.onstart = () => setBlock(true)
         synth.cancel();
-        voice.text = digit;
+        voice.text = target.toLowerCase();
         synth.speak(voice);
         voice.onend = () => setBlock(false)
     }

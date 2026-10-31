@@ -35,6 +35,10 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({state, setState}) => {
     const handleChangeLanguage = () => {
         setState({...state, lang: state.lang === 'ru-RU' ? 'en-US' : 'ru-RU'})
     }
+    const handleChangeTarget = () => {
+        setState({...state, target: state.target === 'digits' ? 'letters' : 'digits'})
+    }
+
     return (
         <div className={styles.backDrop}>
             <div className={styles.modal}>
@@ -44,6 +48,10 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({state, setState}) => {
                         <div className={styles.settings}>
                             <span>Выбор Языка произношения: </span>
                             <button onClick={handleChangeLanguage}>{state.lang === 'ru-RU'? 'Русский': 'Английский'}</button>
+                        </div>
+                        <div className={styles.settings}>
+                            <span>Выбор цифры\буквы: </span>
+                            <button onClick={handleChangeTarget}>{state.target === 'digits'? 'Цифры': 'Буквы'}</button>
                         </div>
                     </div> :
                     <label>
