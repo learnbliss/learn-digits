@@ -6,7 +6,7 @@ type ItemProps = {
     state: IState;
     itemClassName: string;
     children: React.ReactNode;
-    target: string;
+    target: Record<'target' | 'example', string>;
     block: boolean;
     setBlock: (bool: boolean) => void;
 }
@@ -26,7 +26,7 @@ const Item: React.FC<ItemProps> = ({state, itemClassName, children, target, bloc
         }
         voice.onstart = () => setBlock(true)
         synth.cancel();
-        voice.text = target.toLowerCase();
+        voice.text = target.example;
         synth.speak(voice);
         voice.onend = () => setBlock(false)
     }
