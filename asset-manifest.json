@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/learn-digits/static/css/main.aa8fffb4.css",
-    "main.js": "/learn-digits/static/js/main.7a1c9d09.js",
+    "main.js": "/learn-digits/static/js/main.43aa74d5.js",
     "static/js/787.72f17906.chunk.js": "/learn-digits/static/js/787.72f17906.chunk.js",
     "index.html": "/learn-digits/index.html",
     "main.aa8fffb4.css.map": "/learn-digits/static/css/main.aa8fffb4.css.map",
-    "main.7a1c9d09.js.map": "/learn-digits/static/js/main.7a1c9d09.js.map",
+    "main.43aa74d5.js.map": "/learn-digits/static/js/main.43aa74d5.js.map",
     "787.72f17906.chunk.js.map": "/learn-digits/static/js/787.72f17906.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa8fffb4.css",
-    "static/js/main.7a1c9d09.js"
+    "static/js/main.43aa74d5.js"
   ]
 }
