@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import styles from './ConfirmModal.module.css'
-import {IState} from "../../types";
+import {IState, ITarget} from "../../types";
+import {sel} from "../App/App";
 
 type ConfirmModalProps = {
     state: IState;
@@ -36,8 +37,14 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({state, setState}) => {
         setState({...state, lang: state.lang === 'ru-RU' ? 'en-US' : 'ru-RU'})
     }
     const handleChangeTarget = () => {
-        setState({...state, target: state.target === 'digits' ? 'letters' : 'digits'})
-    }
+        const keys = Object.keys(sel) as ITarget[]
+        const nextIndex = (keys.indexOf(state.target) + 1) % keys.length;
+
+        setState({
+            ...state,
+            target: keys[nextIndex]
+        });
+    };
 
     return (
         <div className={styles.backDrop}>
@@ -47,11 +54,12 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({state, setState}) => {
                         <h2>settings</h2>
                         <div className={styles.settings}>
                             <span>Выбор Языка произношения: </span>
-                            <button onClick={handleChangeLanguage}>{state.lang === 'ru-RU'? 'Русский': 'Английский'}</button>
+                            <button
+                                onClick={handleChangeLanguage}>{state.lang === 'ru-RU' ? 'Русский' : 'Английский'}</button>
                         </div>
                         <div className={styles.settings}>
-                            <span>Выбор цифры\буквы: </span>
-                            <button onClick={handleChangeTarget}>{state.target === 'digits'? 'Цифры': 'Буквы'}</button>
+                            <span>Выбор: </span>
+                            <button onClick={handleChangeTarget}>{state.target}</button>
                         </div>
                     </div> :
                     <label>
@@ -59,7 +67,8 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({state, setState}) => {
                         <input value={value} onChange={handleChange} autoFocus={true}/>
                     </label>}
             </div>
-            <div onClick={() => setState({...state, isViewConfirm: false, settingsOpen: false})} className={styles.layout}/>
+            <div onClick={() => setState({...state, isViewConfirm: false, settingsOpen: false})}
+                 className={styles.layout}/>
         </div>
     );
 };

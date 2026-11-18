@@ -1,5 +1,7 @@
 type ILang = 'ru-RU' | 'en-US';
-type ITarget = 'digits' | 'letters'
+export type ITarget = 'digits' |
+'russianAlphabet' |
+'letterA'
 
 export type IState = {
     lang: ILang;

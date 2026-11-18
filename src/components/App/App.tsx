@@ -12,6 +12,8 @@ const defaultState = {
     target: 'digits'
 }
 
+const digits = [...new Array(101)].map((_, i) => ({target: String(i + 1), example: String(i + 1)}));
+
 const russianAlphabet = [
     { target: "А", example: "а... Аист, Арбуз" },
     { target: "Б", example: "бэ... Барабан, Банан" },
@@ -48,7 +50,34 @@ const russianAlphabet = [
     { target: "Я", example: "я... Яблоко, Якорь" }
 ];
 
-const digits = [...new Array(101)].map((_, i) => ({target: String(i + 1), example: String(i + 1)}));
+const letterA =  [
+    { target: "БА", example: "ба... Барабан, Банан" },
+    { target: "ВА", example: "ва... Вагон, Ваза" },
+    { target: "ГА", example: "га... Газета, Гараж" },
+    { target: "ДА", example: "да... Дача, Дар" },
+    { target: "ЖА", example: "жа... Жаба, Жара" },
+    { target: "ЗА", example: "за... Заяц, Замок" },
+    { target: "КА", example: "ка... Карандаш, Каша" },
+    { target: "ЛА", example: "ла... Лампа, Лапа" },
+    { target: "МА", example: "ма... Машина, Мама" },
+    { target: "НА", example: "на... Насос, Наряд" },
+    { target: "ПА", example: "па... Парус, Папа" },
+    { target: "РА", example: "ра... Ракета, Радуга" },
+    { target: "СА", example: "са... Самолет, Сапог" },
+    { target: "ТА", example: "та... Тарелка, Танк" },
+    { target: "ФА", example: "фа... Фара, Фабрика" },
+    { target: "ХА", example: "ха... Халат, Хамелеон" },
+    { target: "ЦА", example: "ца... Цапля, Царь" },
+    { target: "ЧА", example: "ча... Чашка, Часы" },
+    { target: "ША", example: "ша... Шар, Шапка" },
+    { target: "ЩА", example: "ща... Щавель" }
+];
+
+export const sel = {
+    russianAlphabet,
+    digits,
+    letterA,
+}
 
 function App() {
     const [block, setBlock] = useState(false);
@@ -57,8 +86,7 @@ function App() {
         localStorage.setItem(saveSettings, JSON.stringify(state))
     }, [state]); //eslint-disable-line
 
-    const target = state.target === 'digits' ? digits : russianAlphabet
-    console.log('onyx target:', target)
+    const target = sel[state.target];
 
     return (
         <>
