@@ -197,7 +197,7 @@ function App() {
         localStorage.setItem(saveSettings, JSON.stringify(state))
     }, [state]); //eslint-disable-line
 
-    const target = sel[state.target];
+    const target = sel[state.target] ?? digits;
 
     return (
         <>
