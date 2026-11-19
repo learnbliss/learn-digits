@@ -52,12 +52,12 @@ const russianAlphabet = [
 
 const syllablesWithA = [
     {target: "БА", example: "ба... Барабан, Банан"},
-    {target: "ВА", example: "ва... Вагон, Ваза"},
+    {target: "ВА", example: "ваа... Вагон, Ваза"},
     {target: "ГА", example: "га... Газета, Гараж"},
     {target: "ДА", example: "да... Дача, Дар"},
     {target: "ЖА", example: "жа... Жаба, Жара"},
     {target: "ЗА", example: "за... Заяц, Замок"},
-    {target: "КА", example: "ка... Карандаш, Каша"},
+    {target: "КА", example: "каа... Карандаш, Каша"},
     {target: "ЛА", example: "ла... Лампа, Лапа"},
     {target: "МА", example: "ма... Машина, Мама"},
     {target: "НА", example: "на... Насос, Наряд"},
@@ -70,35 +70,35 @@ const syllablesWithA = [
     {target: "ЦА", example: "ца... Цапля, Царь"},
     {target: "ЧА", example: "ча... Чашка, Часы"},
     {target: "ША", example: "ша... Шар, Шапка"},
-    {target: "ЩА", example: "ща... Щавель"}
+    {target: "ЩА", example: "ща... Щавель, Щадящий"}
 ];
 
 const syllablesWithO = [
     {target: "БО", example: "бо... Бочка, Ботинок"},
-    {target: "ВО", example: "во... Воробей, Волк"},
-    {target: "ГО", example: "го... Город, Голова"},
+    {target: "ВО", example: "воо... Воробей, Волк"},
+    {target: "ГО", example: "гоо... Город, Голова"},
     {target: "ДО", example: "до... Дом, Дорога"},
-    {target: "ЖО", example: "жо... Жокей"},
-    {target: "ЗО", example: "зо... Зола, Зонт"},
-    {target: "КО", example: "ко... Корова, Кошка"},
+    {target: "ЖО", example: "жо... Жокей, Жонглёр"},
+    {target: "ЗО", example: "зо... Золушка, Зонт"},
+    {target: "КО", example: "коо... Корова, Кошка"},
     {target: "ЛО", example: "ло... Лодка, Ложка"},
-    {target: "МО", example: "мо... Молоко, Мост"},
+    {target: "МО", example: "мо... Море, Мост"},
     {target: "НО", example: "но... Ножницы, Нос"},
     {target: "ПО", example: "по... Помидор, Поезд"},
-    {target: "РО", example: "ро... Робот, Ромашка"},
-    {target: "СО", example: "со... Солнце, Собака"},
-    {target: "ТО", example: "то... Топор, Торт"},
-    {target: "ФО", example: "фо... Фонтан, Фото"},
-    {target: "ХО", example: "хо... Хомяк, Хор"},
-    {target: "ЦО", example: "цо... Цоколь"},
-    {target: "ЧО", example: "чо... Чопорный"},
-    {target: "ШО", example: "шо... Шоколад, Шофер"},
-    {target: "ЩО", example: "що... Щука (через ё/у, но для звука о)"}
+    {target: "РО", example: "ро... Робот, Родина"},
+    {target: "СО", example: "соо... Солнце, Соус"},
+    {target: "ТО", example: "то... Тормоз, Торт"},
+    {target: "ФО", example: "фо... Форма, Фото, супчик Фо"},
+    {target: "ХО", example: "хо... Холод, Хор"},
+    {target: "ЦО", example: "цо... Цоколь, Цокот"},
+    {target: "ЧО", example: "чо... Чокнутый, Чопорный"},
+    {target: "ШО", example: "шо... Шок, Шов"},
+    {target: "ЩО", example: "що... Щётка - пишется через букву 'ё', но читается как с буквой О"},
 ];
 
 const syllablesWithU = [
     {target: "БУ", example: "бу... Булка, Бумага"},
-    {target: "ВУ", example: "ву... Вулкан"},
+    {target: "ВУ", example: "ву... Вулкан, Вуаль"},
     {target: "ГУ", example: "гу... Гусь, Гусеница"},
     {target: "ДУ", example: "ду... Духи, Дудник"},
     {target: "ЖУ", example: "жу... Жук, Журнал"},
@@ -106,13 +106,13 @@ const syllablesWithU = [
     {target: "КУ", example: "ку... Кукла, Курица"},
     {target: "ЛУ", example: "лу... Луна, Лук"},
     {target: "МУ", example: "му... Муха, Музыка"},
-    {target: "НУ", example: "ну... Нуга"},
+    {target: "НУ", example: "ну... Нуга, Нумизмат"},
     {target: "ПУ", example: "пу... Пуговица, Пух"},
     {target: "РУ", example: "ру... Ручка, Рука"},
     {target: "СУ", example: "су... Сумка, Суп"},
     {target: "ТУ", example: "ту... Туча, Туфли"},
     {target: "ФУ", example: "фу... Футболка, Футляр"},
-    {target: "ХУ", example: "ху... Художник"},
+    {target: "ХУ", example: "ху... Художник, Худой"},
     {target: "ЦУ", example: "цу... Цукаты, Цунами"},
     {target: "ЧУ", example: "чу... Чудо, Чулок"},
     {target: "ШУ", example: "шу... Шуба, Шум"},
@@ -126,10 +126,10 @@ const syllablesWithI = [
     {target: "ДИ", example: "ди... Диван, Динозавр"},
     {target: "ЖИ", example: "жи... Жираф, Живот"},
     {target: "ЗИ", example: "зи... Зима, Зигзаг"},
-    {target: "КИ", example: "ки... Кирпич, Киви"},
-    {target: "ЛИ", example: "ли... Лимон, Лиса"},
+    {target: "КИ", example: "кии... Кирпич, Киви"},
+    {target: "ЛИ", example: "лии... Лимон, Лизать"},
     {target: "МИ", example: "ми... Мишка, Микрофон"},
-    {target: "НИ", example: "ни... Нитки, Ниндзя"},
+    {target: "НИ", example: "нии... Нитки, Ниппель"},
     {target: "ПИ", example: "пи... Письмо, Пила"},
     {target: "РИ", example: "ри... Рисунок, Рисоварка"},
     {target: "СИ", example: "си... Сирень, Сито"},
@@ -138,7 +138,7 @@ const syllablesWithI = [
     {target: "ХИ", example: "хи... Хижина, Хищник"},
     {target: "ЦИ", example: "ци... Циркуль, Цифра"},
     {target: "ЧИ", example: "чи... Чиполлино, Чиж"},
-    {target: "ШИ", example: "ши... Шишка, Шина"},
+    {target: "ШИ", example: "ши... Шиповник, Шина"},
     {target: "ЩИ", example: "щи... Щипцы, Щит"}
 ];
 
@@ -160,23 +160,21 @@ const syllablesWithE = [
 ];
 
 const syllablesWithY = [
-    {target: "БЫ", example: "бы... Бык, Быстро"},
-    {target: "ВЫ", example: "вы... Выдра, Вьюга"},
+    {target: "БЫ", example: "быы... Бык, Быстро"},
+    {target: "ВЫ", example: "выы... Выдра, Вьюга"},
     {target: "ДЫ", example: "ды... Дым, Дыня"},
-    {target: "ЖЫ", example: "жи... (пиши с И)"},
     {target: "ЗЫ", example: "зы... Зыбка"},
     {target: "КЫ", example: "кы... Кыш"},
     {target: "ЛЫ", example: "лы... Лыжи, Лысый"},
-    {target: "МЫ", example: "мы... Мыло, Мышь"},
+    {target: "МЫ", example: "мыы... Мыло, Мышь"},
     {target: "НЫ", example: "ны... Нырять"},
     {target: "ПЫ", example: "пы... Пылесос, Пыль"},
     {target: "РЫ", example: "ры... Рыба, Рысь"},
     {target: "СЫ", example: "сы... Сыыр, Сынок"},
-    {target: "ТЫ", example: "ты... Тыква, Тысяча"},
+    {target: "ТЫ", example: "тыы... Тыква, Тысяча"},
     {target: "ФЫ", example: "фы... Фыркать"},
-    {target: "ХЫ", example: "хы... Ххикать"},
+    {target: "ХЫ", example: "хы... Хычин"},
     {target: "ЦЫ", example: "цы... Цыплёнок, Цыган"},
-    {target: "ШЫ", example: "ши... (пиши с И)"}
 ];
 
 export const sel = {
